@@ -94,10 +94,13 @@ class AppWidgetState extends State<AppWidget> {
 
     while (isPolling && taskId != null) {
       try {
-        final TaskStatusResponse statusResponse = await client.getTaskStatus(taskId!);
+        final TaskStatusResponse statusResponse =
+            await client.getTaskStatus(taskId!);
 
         setState(() {
-          progressText = statusResponse.progress == null ? '0.0%' : '${statusResponse.progress}%';
+          progressText = statusResponse.progress == null
+              ? '0.0%'
+              : '${statusResponse.progress}%';
         });
 
         if (statusResponse.status == 'SUCCEEDED') {
@@ -108,13 +111,14 @@ class AppWidgetState extends State<AppWidget> {
           });
 
           if (videoUrl != null) {
-            _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse(videoUrl!))
-              ..initialize().then((_) {
-                setState(() {
-                  _videoPlayerController?.setLooping(true);
-                });
-                _videoPlayerController?.play();
-              });
+            _videoPlayerController =
+                VideoPlayerController.networkUrl(Uri.parse(videoUrl!))
+                  ..initialize().then((_) {
+                    setState(() {
+                      _videoPlayerController?.setLooping(true);
+                    });
+                    _videoPlayerController?.play();
+                  });
           }
 
           break;
@@ -203,9 +207,11 @@ class AppWidgetState extends State<AppWidget> {
               isLoading
                   ? const CircularProgressIndicator()
                   : videoUrl != null
-                      ? _videoPlayerController != null && _videoPlayerController!.value.isInitialized
+                      ? _videoPlayerController != null &&
+                              _videoPlayerController!.value.isInitialized
                           ? AspectRatio(
-                              aspectRatio: _videoPlayerController!.value.aspectRatio,
+                              aspectRatio:
+                                  _videoPlayerController!.value.aspectRatio,
                               child: VideoPlayer(_videoPlayerController!),
                             )
                           : Text(videoUrl ?? '')
