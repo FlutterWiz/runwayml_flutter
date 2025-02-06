@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   runwayml_flutter:
     path: ../
+  video_player: ^2.9.2
 
 
   # The following adds the Cupertino Icons font to your application.
