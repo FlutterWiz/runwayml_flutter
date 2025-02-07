@@ -1,3 +1,9 @@
+## 0.0.3
+
+- Added a package logo for better visibility on `pub.dev`.
+- Updated documentation to improve clarity and usability.
+- Ensured package metadata follows best practices.
+
 ## 0.0.2
 
 - Removed unnecessary `video_player` dependency to reduce package size.
@@ -6,7 +12,7 @@
 
 ## 0.0.1
 
-- Initial release of the `runwayml_client` package.
+- Initial release of the `runwayml_flutter` package.
 - Added support for interacting with the RunwayML API to generate videos from images and text prompts.
 - Features include:
   - Video generation with customizable parameters like image URL, seed, model, prompt text, watermark, duration, and ratio.
