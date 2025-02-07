@@ -1,42 +1,55 @@
 # runwayml_flutter
 
 [![pub package](https://img.shields.io/pub/v/runwayml_flutter.svg)](https://pub.dev/packages/runwayml_flutter)
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
-A Dart wrapper for the [RunwayML](https://runwayml.com) API to integrate AI-generated content into Flutter apps. This package allows you to generate videos, check task statuses, and manage tasks using the RunwayML API.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/alperefesahin/runwayml_flutter/refs/heads/main/screenshots/logo.png" width="150" height="150">
+</p>
 
-## Features
+`runwayml_flutter` is a **Flutter package** that provides a **Dart wrapper** for the [Runway](https://runwayml.com) API, enabling integration of AI-generated content into Flutter apps.
 
-- Generate videos from an image and a text prompt.
-- Retrieve task status for ongoing tasks.
-- Cancel or delete tasks.
-- Easy integration with Flutter apps.
+🚀 **Generate videos, check task statuses, and manage tasks with ease!**
 
 ---
 
-## Installation
+## ✨ Features
 
-To install this package, add it to your `pubspec.yaml` file:
+✅ Generate AI-powered videos from images and text prompts.
+
+✅ Retrieve task status for ongoing tasks.
+
+✅ Cancel or delete tasks effortlessly.
+
+✅ Lightweight and easy to integrate with Flutter apps.
+
+---
+
+## 📦 Installation
+
+Add `runwayml_flutter` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  runwayml_flutter: ^0.0.1
+  runwayml_flutter: ^0.0.3
 ```
 
-Then run `flutter pub get` to install the package.
+Then, run:
+```sh
+flutter pub get
+```
 
-## Usage
+---
 
-To use this package, you need a valid [RunwayML API key](https://dev.runwayml.com). Once you have the API key, you can instantiate the RunwayMLClient and make requests to the API.
+## 🚀 Usage
 
-### Initialize the Client
+To use this package, obtain a [RunwayML API key](https://dev.runwayml.com) and initialize the client:
 
 ```dart
 final client = RunwayMLClient(apiKey: 'your_api_key');
 ```
 
-### Generate Video
-
-Generate a video based on an input image and a prompt.
+### 🎬 Generate Video
 
 ```dart
 final response = await client.generateVideo(
@@ -52,55 +65,70 @@ final response = await client.generateVideo(
 print('Generated Video Task ID: ${response.id}');
 ```
 
-### Get Task Status
-
-Check the status of a task using the task ID.
+### 🔍 Get Task Status
 
 ```dart
 final response = await client.getTaskStatus('task_id');
 print('Task Status: ${response.status}');
 ```
 
-### Delete Task
-
-Delete a task by its task ID.
+### ❌ Delete Task
 
 ```dart
 await client.deleteTask('task_id');
 ```
 
-## Example
+---
 
-To get a quick glance at how to use the `runwayml_flutter` package, check out the example in the `example/lib/main.dart` file. The example demonstrates how to integrate the RunwayML API into your Flutter app.
+## 📌 Example
 
-Example `Promt Image`:
+🔹 **Prompt Image:**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e6c3da4-2399-47bb-9480-8c2c893b28f2" width="185" height="250">
+</p>
 
-<img src="https://github.com/user-attachments/assets/2e6c3da4-2399-47bb-9480-8c2c893b28f2" width="185" height="250">
+🔹 **Prompt Text:**
+> A dynamic shot of a young developer jumping with excitement, holding a Flutter Dash toy in one hand and a business card in the other. A Flutter Dart flag flutters from his pocket, caught by the breeze. Behind him, a digital development board flashes with changing lines of code, with neon lighting creating an energetic, cinematic glow around him, emphasizing the forward motion and passion for tech.
 
+🔹 **Generated Videos:**
 
-Example `Promt Text`:
-A dynamic shot of a young developer jumping with excitement, holding a Flutter Dash toy in one hand and a business card in the other. A Flutter Dart flag flutters from his pocket, caught by the breeze. Behind him, a digital development board flashes with changing lines of code, with neon lighting creating an energetic, cinematic glow around him, emphasizing the forward motion and passion for tech.
-
-Videos:
-
-<img src="https://github.com/user-attachments/assets/9bf94f77-5f0a-4a57-8277-e63af818b1d0">
-
-<img src="https://github.com/user-attachments/assets/6dfea0d2-5df3-47e8-8f1a-df4dda3a7d68">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9bf94f77-5f0a-4a57-8277-e63af818b1d0">
+  <img src="https://github.com/user-attachments/assets/6dfea0d2-5df3-47e8-8f1a-df4dda3a7d68">
+</p>
 
 ---
 
-## More Information
+## 📖 More Information
 
-For detailed API documentation, including limitations and other specific details, please visit the official [RunwayML API documentation](https://docs.dev.runwayml.com).
+📌 For detailed API documentation, visit the official [RunwayML API Docs](https://docs.dev.runwayml.com).
 
-## API Reference
-- `RunwayMLClient`:
-  - `generateVideo(...)`: Generates a video based on an image and a prompt.
-  - `getTaskStatus(String taskId)`: Retrieves the status of a task.
-  - `deleteTask(String taskId)`: Deletes a task by its ID.
-  - `TaskResponse`: Represents the response for task creation, containing the task ID.
-  - `TaskStatusResponse`: Represents the status of a task, including progress and output.
+⚡ This package will be updated with new features and improvements over time. Always refer to the **latest documentation** for updates.
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to open issues or submit pull requests for bug fixes or new features.
+## 📝 API Reference
+
+| Method | Description |
+|--------|-------------|
+| `generateVideo(...)` | Generates a video based on an image and a prompt. |
+| `getTaskStatus(String taskId)` | Retrieves the status of a task. |
+| `deleteTask(String taskId)` | Deletes a task by its ID. |
+
+---
+
+## 🛠️ Contributing
+
+Contributions are welcome! Feel free to **open issues** or **submit pull requests** for improvements.
+
+---
+
+## 📢 Stay Connected
+
+If you found this package helpful, **consider supporting** by:
+- ⭐ Starring the [GitHub Repository](https://github.com/alperefesahin/runwayml_flutter)
+- 📝 Reading the full introduction on **[Medium](https://medium.com/@alperefesahin/bringing-runway-to-flutter-introducing-runwayml_flutter-e54d103abff6)**
+- 🔔 Following me on **[X](https://x.com/alperefesahin)**
+- 📺 Subscribing to my **[YouTube Channel](https://www.youtube.com/@alperefesahin)** for more Flutter content!
+
+Thanks for checking out `runwayml_flutter`! 🚀
