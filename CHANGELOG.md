@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Fixed minor inconsistencies in the documentation.
+
 ## 0.0.5
 
 - Updated README.md for improved clarity and structure.
