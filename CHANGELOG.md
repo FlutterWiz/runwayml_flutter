@@ -1,3 +1,12 @@
+## 0.0.4
+
+- Updated README with a more aesthetic and structured format.
+- Added a link to the Medium article introducing the package.
+- Added a link to the YouTube video showcasing the package.
+- Improved package metadata, including `homepage`, `issue_tracker`, and `funding` links.
+- Added `topics` for better discoverability on `pub.dev`.
+- Updated `pubspec.yaml` to match best practices.
+
 ## 0.0.3
 
 - Added a package logo for better visibility on `pub.dev`.
