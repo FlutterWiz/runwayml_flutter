@@ -4,7 +4,7 @@
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/alperefesahin/runwayml_flutter/refs/heads/main/screenshots/logo.png" width="150" height="150">
+  <img src="https://raw.githubusercontent.com/FlutterWiz/runwayml_flutter/refs/heads/main/screenshots/logo.png" width="150" height="150">
 </p>
 
 `runwayml_flutter` is a **Flutter package** that provides a **Dart wrapper** for the [Runway](https://runwayml.com) API, enabling integration of AI-generated content into Flutter apps.
@@ -126,9 +126,10 @@ Contributions are welcome! Feel free to **open issues** or **submit pull request
 ## 📢 Stay Connected
 
 If you found this package helpful, **consider supporting** by:
-- ⭐ Starring the [GitHub Repository](https://github.com/alperefesahin/runwayml_flutter)
-- 📝 Reading the full introduction on **[Medium](https://medium.com/@alperefesahin/bringing-runway-to-flutter-introducing-runwayml_flutter-e54d103abff6)**
-- 🔔 Following me on **[X](https://x.com/alperefesahin)**
-- 📺 Subscribing to my **[YouTube Channel](https://www.youtube.com/@alperefesahin)** for more Flutter content!
+- ⭐ Starring the [GitHub Repository](https://github.com/FlutterWiz/runwayml_flutter)
+- 📺 Watch the tutorial video on **[YouTube](https://youtu.be/ocxAs_rwjYg?si=_2wMowKUeXdV4tZu)**
+- 📝 Reading the full introduction on **[Medium](https://medium.com/@FlutterWiz/bringing-runway-to-flutter-introducing-runwayml_flutter-e54d103abff6)**
+- 🔔 Following me on **[X](https://x.com/FlutterWiz)**
+- 📺 Subscribing to my **[YouTube Channel](https://www.youtube.com/@FlutterWiz)** for more Flutter content!
 
 Thanks for checking out `runwayml_flutter`! 🚀
