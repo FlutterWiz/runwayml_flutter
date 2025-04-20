@@ -1,6 +1,6 @@
 name: runwayml_flutter
 description: "A Flutter package that provides a Dart wrapper for the RunwayML API, enabling integration of AI-generated content into Flutter apps."
-version: 0.0.6+1
+version: 0.0.7
 homepage: https://github.com/FlutterWiz/runwayml_flutter
 issue_tracker: https://github.com/FlutterWiz/runwayml_flutter/issues
 topics: [runwayml-flutter, runway, runwayml]
