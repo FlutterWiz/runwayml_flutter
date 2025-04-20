@@ -59,8 +59,7 @@ class RunwayMLClient {
     await _delete('/tasks/$taskId');
   }
 
-  Future<Map<String, dynamic>> _post(
-      String endpoint, Map<String, dynamic> data) async {
+  Future<Map<String, dynamic>> _post(String endpoint, Map<String, dynamic> data) async {
     final response = await http.post(
       Uri.parse('$baseUrl$endpoint'),
       headers: _headers(),
@@ -95,11 +94,8 @@ class RunwayMLClient {
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
-      debugPrint(
-          HttpException(statusCode: response.statusCode, message: response.body)
-              .toString());
-      throw HttpException(
-          statusCode: response.statusCode, message: response.body);
+      debugPrint(HttpException(statusCode: response.statusCode, message: response.body).toString());
+      throw HttpException(statusCode: response.statusCode, message: response.body);
     }
   }
 
@@ -109,8 +105,7 @@ class RunwayMLClient {
     } else if (response.statusCode == 404) {
       debugPrint('Task not found or already deleted.');
     } else {
-      throw HttpException(
-          statusCode: response.statusCode, message: response.body);
+      throw HttpException(statusCode: response.statusCode, message: response.body);
     }
   }
 }
