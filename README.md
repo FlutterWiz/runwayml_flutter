@@ -31,7 +31,7 @@ Add `runwayml_flutter` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  runwayml_flutter: ^0.0.6
+  runwayml_flutter: ^0.0.7
 ```
 
 Then, run:
