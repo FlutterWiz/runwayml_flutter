@@ -16,31 +16,31 @@ class AppWidget extends StatefulWidget {
 }
 
 class AppWidgetState extends State<AppWidget> {
-// This will be used to interact with the RunwayML API and perform video generation tasks.
+  // This will be used to interact with the RunwayML API and perform video generation tasks.
   late RunwayMLClient client;
 
-// This is a controller for the video player. It's used to initialize and control the video playback once the video URL is retrieved.
+  // This is a controller for the video player. It's used to initialize and control the video playback once the video URL is retrieved.
   VideoPlayerController? _videoPlayerController;
 
-// This holds the URL of the video that will be generated and shown in the UI once the task is complete.
+  // This holds the URL of the video that will be generated and shown in the UI once the task is complete.
   String? videoUrl;
 
-// This holds the unique task ID that is used to track the status of the video generation task.
+  // This holds the unique task ID that is used to track the status of the video generation task.
   String? taskId;
 
-// This holds the current progress as a string, which will be used to show percentage or status updates (e.g., "50%" or "Initializing...").
+  // This holds the current progress as a string, which will be used to show percentage or status updates (e.g., "50%" or "Initializing...").
   String? progressText;
 
-// A boolean flag to track whether the video generation is in progress and loading.
+  // A boolean flag to track whether the video generation is in progress and loading.
   bool isLoading = false;
 
-// A boolean flag to track whether the task cancellation process is in progress, so we avoid multiple cancel clicks.
+  // A boolean flag to track whether the task cancellation process is in progress, so we avoid multiple cancel clicks.
   bool isCanceling = false;
 
-// A boolean flag to track whether the video generation process is ongoing. This ensures the generate button isn't tapped repeatedly.
+  // A boolean flag to track whether the video generation process is ongoing. This ensures the generate button isn't tapped repeatedly.
   bool isGenerating = false;
 
-// A boolean flag to track whether the app is polling for updates from the API regarding the task status.
+  // A boolean flag to track whether the app is polling for updates from the API regarding the task status.
   bool isPolling = false;
 
   @override
@@ -94,13 +94,15 @@ class AppWidgetState extends State<AppWidget> {
 
     while (isPolling && taskId != null) {
       try {
-        final TaskStatusResponse statusResponse =
-            await client.getTaskStatus(taskId!);
+        final TaskStatusResponse statusResponse = await client.getTaskStatus(
+          taskId!,
+        );
 
         setState(() {
-          progressText = statusResponse.progress == null
-              ? '0.0%'
-              : '${statusResponse.progress}%';
+          progressText =
+              statusResponse.progress == null
+                  ? '0.0%'
+                  : '${statusResponse.progress}%';
         });
 
         if (statusResponse.status == 'SUCCEEDED') {
@@ -111,14 +113,15 @@ class AppWidgetState extends State<AppWidget> {
           });
 
           if (videoUrl != null) {
-            _videoPlayerController =
-                VideoPlayerController.networkUrl(Uri.parse(videoUrl!))
-                  ..initialize().then((_) {
-                    setState(() {
-                      _videoPlayerController?.setLooping(true);
-                    });
-                    _videoPlayerController?.play();
-                  });
+            _videoPlayerController = VideoPlayerController.networkUrl(
+                Uri.parse(videoUrl!),
+              )
+              ..initialize().then((_) {
+                setState(() {
+                  _videoPlayerController?.setLooping(true);
+                });
+                _videoPlayerController?.play();
+              });
           }
 
           break;
@@ -193,29 +196,28 @@ class AppWidgetState extends State<AppWidget> {
               isGenerating
                   ? const Text('Generating Video...')
                   : ElevatedButton(
-                      onPressed: generateVideo,
-                      child: const Text('Generate Video'),
-                    ),
+                    onPressed: generateVideo,
+                    child: const Text('Generate Video'),
+                  ),
               if (taskId != null && isLoading)
                 isCanceling
                     ? const Text('Task is being canceled...')
                     : ElevatedButton(
-                        onPressed: cancelTask,
-                        child: const Text('Cancel Task'),
-                      ),
+                      onPressed: cancelTask,
+                      child: const Text('Cancel Task'),
+                    ),
               if (progressText != null) Text(progressText!),
               isLoading
                   ? const CircularProgressIndicator()
                   : videoUrl != null
-                      ? _videoPlayerController != null &&
-                              _videoPlayerController!.value.isInitialized
-                          ? AspectRatio(
-                              aspectRatio:
-                                  _videoPlayerController!.value.aspectRatio,
-                              child: VideoPlayer(_videoPlayerController!),
-                            )
-                          : Text(videoUrl ?? '')
-                      : const SizedBox(),
+                  ? _videoPlayerController != null &&
+                          _videoPlayerController!.value.isInitialized
+                      ? AspectRatio(
+                        aspectRatio: _videoPlayerController!.value.aspectRatio,
+                        child: VideoPlayer(_videoPlayerController!),
+                      )
+                      : Text(videoUrl ?? '')
+                  : const SizedBox(),
             ],
           ),
         ),
