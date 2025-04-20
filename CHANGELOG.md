@@ -1,3 +1,8 @@
+## 0.0.7+1
+
+- Formatted code using `dart format` for better readability and adherence to Dart style guidelines
+- Improved pub points score
+
 ## 0.0.7
 
 - Updated minimum Dart SDK requirements
