@@ -3,6 +3,7 @@
 - Updated minimum Dart SDK requirements
 - Updated dependencies for both main package and example folder
 - Improved compatibility with latest Flutter and Dart versions
+- Formatted code using `dart format` for better readability and adherence to Dart style guidelines
 
 ## 0.0.6
 
